@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-
+<body ngl-controller="MainCtrl">
+    <span ngl-bind="bar"></span>
+    <button ngl-click="foo()">Increment</button>
 </body>
-<script src="DOMCompiler.js"></script>
+<script src="Scope.js"></script>
 <script src="Provider.js"></script>
+<script src="DOMCompiler.js"></script>
+<script src="directives.js"></script>
 <script src="main.js"></script>
 </html>

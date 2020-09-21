@@ -47,8 +47,8 @@ let Provider = {
         }, this);
         return fn.apply(null, deps);
     },
-    // _cache: { $rootScope: new Scope() }
-    _cache: {}
+    _cache: { $rootScope: new Scope() }
+    // _cache: {}
 };
 
 Provider.DIRECTIVES_SUFFIX = 'Directive';

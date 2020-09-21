@@ -6,14 +6,23 @@ Provider.service('myService', function () {
     }
 })
 
-Provider.controller('myCtrl', (myService) => {
-    myService()
-        .then(() => {
-            console.log('Success fetch')
-        }, err => console.log('Err Fetch'))
-        console.log('myService :: ', myService)
+
+Provider.controller('MainCtrl', ($scope) => {
+    // myService()
+    //     .then(() => {
+    //         console.log('Success fetch')
+    $scope.bar = 0;
+
+    $scope.foo = function () {
+        $scope.bar += 1;
+        //     }, err => console.log('Err Fetch'))
+        console.log('$scope :: ', $scope);
+    };
 })
+DOMCompiler.bootstrap()
+
+// var ctrl = Provider.get('MainCtrl' + Provider.CONTROLLERS_SUFFIX, {});
+// Provider.invoke(ctrl);
+
 
 console.log(Provider);
-var ctrl = Provider.get('myCtrl' + Provider.CONTROLLERS_SUFFIX);
-Provider.invoke(ctrl);
